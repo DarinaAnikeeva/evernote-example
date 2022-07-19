@@ -23,7 +23,6 @@ def is_valid_date(text):
     if text.startswith('-') or text.startswith('+') or text.isdigit():
         return date.today() + timedelta(days=int(text))
     try:
-
         return datetime.strptime(text, "%Y-%m-%d").date()
     except ValueError:
         msg = "Not a valid date: '{0}'.".format(text)
